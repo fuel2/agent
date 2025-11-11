@@ -1,6 +1,13 @@
 #!bash
 
 source ./agent/utils/vscode_claude_helpers.sh
+
+# Check if .env file exists
+if [ ! -f ./agent/.env ]; then
+    echo "Error: .env file not found at ./agent/.env"
+    exit 1
+fi
+
 source ./agent/.env
 adrs_path="$(realpath ./docs/ADRs/)"
 
