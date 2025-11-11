@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# General-purpose function to find a file and return its absolute path
+# Usage: find_file_path "filename"
+# Returns: absolute path to the first matching file, or empty string if not found
+find_file_path() {
+    local filename="$1"
+    local result=$(find "$(pwd)" -name "$filename" -type f 2>/dev/null | head -n 1)
+    echo "$result"
+}
+
 # Function to build ADR file references dynamically
 build_adr_references() {
     local adrs_path="${1:-./docs/ADRs/}"
