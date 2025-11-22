@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir ./docs/ADRs/autopilot/
+touch ./docs/ADRs/autopilot/.gitkeep
+
 # Process each cluster subfolder in ./docs/strategy/affinity_maps/clusters/
 CLUSTERS_DIR="./docs/strategy/affinity_maps/clusters"
 
