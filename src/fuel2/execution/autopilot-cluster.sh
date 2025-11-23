@@ -30,3 +30,10 @@ fi
 
 I will review and test the implementation after completion.
 "
+git ls-files --others --exclude-standard | grep '\.md$' | xargs rm
+
+# Extract just the cluster folder name from the path
+CLUSTER_NAME=$(basename "$1")
+
+rm -rf ./docs/strategy/affinity_maps/clusters/$CLUSTER_NAME
+echo "✓ Finished processing cluster: $CLUSTER_NAME"
